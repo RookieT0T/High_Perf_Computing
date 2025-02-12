@@ -31,10 +31,10 @@ int main(int argc, char* argv[]){
     }
 
     // call convolution
-    auto startTime = std::chrono::steady_clock::now();
+    auto startTime = std::chrono::high_resolution_clock::now();
     convolve(image, out, n, mask, m);
-    auto endTime = std::chrono::steady_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime - startTime);
 
     /*
     for(int i = 0; i < n * n; ++i){

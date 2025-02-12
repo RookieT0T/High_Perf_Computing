@@ -63,10 +63,10 @@ int main(int argc, char* argv[]){
 
     // mmul1
     //printArr(C1, row);
-    auto startTime1 = std::chrono::steady_clock::now();
+    auto startTime1 = std::chrono::high_resolution_clock::now();
     mmul1(A, B, C1, row);
-    auto endTime1 = std::chrono::steady_clock::now();
-    auto duration1 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime1 - startTime1);
+    auto endTime1 = std::chrono::high_resolution_clock::now();
+    auto duration1 = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime1 - startTime1);
     std::cout << duration1.count() << std::endl;
     std::cout << C1[row * row - 1] << std::endl;
     //printArr(C1, row);
@@ -74,30 +74,30 @@ int main(int argc, char* argv[]){
 
     // mmul2
     //printArr(C2, row);
-    auto startTime2 = std::chrono::steady_clock::now();
+    auto startTime2 = std::chrono::high_resolution_clock::now();
     mmul2(A, B, C2, row);
-    auto endTime2 = std::chrono::steady_clock::now();
-    auto duration2 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime2 - startTime2);
+    auto endTime2 = std::chrono::high_resolution_clock::now();
+    auto duration2 = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime2 - startTime2);
     std::cout << duration2.count() << std::endl;
     std::cout << C2[row * row - 1] << std::endl;
     //printArr(C2, row);
 
     // mmul3
     //printArr(C3, row);
-    auto startTime3 = std::chrono::steady_clock::now();
+    auto startTime3 = std::chrono::high_resolution_clock::now();
     mmul3(A, B, C3, row);
-    auto endTime3 = std::chrono::steady_clock::now();
-    auto duration3 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime3 - startTime3);
+    auto endTime3 = std::chrono::high_resolution_clock::now();
+    auto duration3 = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime3 - startTime3);
     std::cout << duration3.count() << std::endl;
     std::cout << C3[row * row - 1] << std::endl;
     //printArr(C3, row);
 
     // mmul4
     //printArr(C4, row);
-    auto startTime4 = std::chrono::steady_clock::now();
+    auto startTime4 = std::chrono::high_resolution_clock::now();
     mmul4(vectorA, vectorB, C4, row);
-    auto endTime4 = std::chrono::steady_clock::now();
-    auto duration4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4);
+    auto endTime4 = std::chrono::high_resolution_clock::now();
+    auto duration4 = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime4 - startTime4);
     std::cout << duration4.count() << std::endl;
     std::cout << C4[row * row - 1] << std::endl;
     //printArr(C4, row);

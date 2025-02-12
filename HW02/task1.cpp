@@ -21,10 +21,10 @@ int main(int argc, char* argv[]){
     }
 
     // call scan for core computations
-    auto startTime = std::chrono::steady_clock::now();
+    auto startTime = std::chrono::high_resolution_clock::now();
     scan(arrInput, arrOutput, N);
-    auto endTime = std::chrono::steady_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    auto endTime = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(endTime - startTime);
     
     // print outputs
     std::cout << duration.count() << std::endl;
