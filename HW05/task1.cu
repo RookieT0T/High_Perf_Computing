@@ -7,7 +7,7 @@ __global__ void kernel(){
     for(int i = 1; i <= index + 1; ++i){
         result *= i;
     }
-    std::printf("%d!=%d\n", index + 1, result);
+    printf("%d!=%d\n", index + 1, result);
 }
 
 int main(){

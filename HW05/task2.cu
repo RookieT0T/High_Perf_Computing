@@ -3,7 +3,7 @@
 #include <random>
 
 __global__ void kernel(int* dA, int a){
-    int index = blockIdx.x * 8 + threadIdx.x;
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
     dA[index] = a * threadIdx.x + blockIdx.x;
 }
 
@@ -25,7 +25,7 @@ int main(){
     cudaDeviceSynchronize();
 
     cudaMemcpy(hA, dA, sizeof(int) * 16, cudaMemcpyDeviceToHost);
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < 16; ++i) {
         printf("%d ", hA[i]);
     }
     printf("\n");
