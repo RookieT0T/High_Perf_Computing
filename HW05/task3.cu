@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
     cudaMemcpy(dB, hB, n * sizeof(float), cudaMemcpyHostToDevice);
     
     // calculate the number of necessary blocks
-    const int threadsPerBlock = 512;
+    const int threadsPerBlock = 16;
     const int numBlocks = (n + threadsPerBlock - 1) / threadsPerBlock;
 
     // timing
