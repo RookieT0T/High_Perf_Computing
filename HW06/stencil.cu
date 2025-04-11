@@ -47,8 +47,8 @@ __global__ void stencil_kernel(const float* image, const float* mask, float* out
   int finalIndex = blockDim.x * blockIdx.x + threadID;
   if(finalIndex < n){
     float temp = 0.0f;
-    for(int j = -R; j <= R; ++j){
-      temp += imageBuffer[threadID + R + j] * maskBuffer[j + R];
+    for(int j = 0; j <= R * 2; ++j){
+      temp += imageBuffer[threadID + j] * maskBuffer[j];
     }
     outputBuffer[threadID] = temp;
   }
